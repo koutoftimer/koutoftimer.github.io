@@ -1,42 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='TFTM'>
 <head>
     <meta charset="UTF-8">
-    <title>Sea-war</title>
-    <link rel="stylesheet" type="text/css" href="./css/main.css">
-    <script type="text/javascript" src="./js/sea-war.js"></script>
-    <script type="text/javascript" src="./js/sea-war.model.js"></script>
-    <script type="text/javascript" src="./js/sea-war.view.js"></script>
-    <script type="text/javascript" src="./js/sea-war.controller.js"></script>
-    <script type="text/javascript" src="./js/sea-war.widget.js"></script>
-    <script type="text/javascript" src="./js/sea-war.scene.js"></script>
-    <script type="text/javascript">
-    	// bootsrap
-        window.addEventListener("load", function () {
-            new Game('#wrapper').start();
-        }, false);
-    </script>
+    <title>{{ doc_title }}</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular-route.js"></script>
+    <script src="js/app.js"></script>
 </head>
 <body>
-	<div id="wrapper"/>
-	<!--audio id="cannonball" src="sounds/cannonball.mp3"></audio>
-	<div>
-		<button onclick="document.getElementById('cannonball').play();setTimeout(function(){document.getElementById('hit').play()},4000)">cannonball</button>
-	</div>
-	
-	<audio id="cannonball" src="sounds/cannonball.mp3"></audio>
-	<div>
-		<button onclick="document.getElementById('cannonball').play();setTimeout(function(){document.getElementById('splash').play()},4000)">cannonball</button>
-	</div>
-	
-	<audio id="hit" src="sounds/hit.ogg"></audio>
-	<div>
-		<button onclick="document.getElementById('hit').play()">hit</button>
-	</div> 
-	
-	<audio id="splash" src="sounds/water_splash.wav"></audio>
-	<div>
-		<button onclick="document.getElementById('splash').play()">splash</button>
-	</div--> 
+	<div ng-view></div>
 </body>
 </html>
