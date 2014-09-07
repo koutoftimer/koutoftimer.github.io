@@ -1,3 +1,13 @@
-## Brief description
+##  О проекте
 
-Classic web based online sea war multiplayer.
+Это одностраничный сайт небольших _web browser realtime multiplayer_ игр с интеграцией соц. сетей.
+
+##  Technolody stack
+
+- _angularjs_ для роутинга и как основной фреймворк для небольших singleplayer аркад.
+- _django_ + addons(django-rest-framework, etc.) как сервер для статических файлов, регистрации, логина, профайла 
+пользователя и тому подобное. Предоставляет апи для игр: инфомация о пользователе; возможность добавления игры, после 
+чего станет доступным обращение к апи этой игры
+- _nodejs_, _tornado_ или _c++ web server backend_ для realtime multiplayer. Предоставляет апи для django сервера: для 
+отображения сводных статистических данных и прочего.
+
