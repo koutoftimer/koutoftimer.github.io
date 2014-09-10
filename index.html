@@ -3,18 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ doc_title }}</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="http://bootswatch.com/cyborg/bootstrap.min.css">
     <link rel="stylesheet" href="./css/main.css">
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular-route.js"></script>
     <script src="js/app.js"></script>
     <!-- Put this script tag to the <head> of your page -->
-    <script src="//vk.com/js/api/openapi.js?115"></script>
+    <script src="https://vk.com/js/api/openapi.js?115"></script>
     <script>VK.init({apiId: 4541354, onlyWidgets: true});</script>
 </head>
 <body>
-	<div ng-view></div>
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Главная</a>
+        </div>
+        <div class="collapse navbar-collapse pull-left">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Игры
+                        <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/battleship">Морской Бой</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse pull-right">
+            <ul class="nav navbar-nav">
+                <li><a href="/about">О проекте</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div ng-view=""></div>
+</div>
+
 </body>
 </html>

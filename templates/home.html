@@ -1,19 +1,26 @@
-<nav-bar></nav-bar>
-<section class="container">
-	<div class="row">
-		<h2 class="page-header"><span class="glyphicon glyphicon-tag bg-warning" style="color: rgb(20, 110, 150)"></span> <em>Куда я попал?</em></h2>
-		<p>
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header">
+            <span class="glyphicon glyphicon-tag"></span> <em>Куда я попал?</em>
+        </h2>
+        <p>
 			Это главная страница одностраничного сайта браузерных онлайн игр.
 		</p>
-		<h2 class="page-header"><span class="glyphicon glyphicon-tag" style="color: rgb(20, 110, 150)"></span> <em>Что мне с этим делать?</em></h2>
+        <h2 class="page-header"><span class="glyphicon glyphicon-tag"></span> <em>Что мне с этим делать?</em></h2>
 		<p>
 			К сожалению, проект только стартовал, это всё что имеется на данный момент.
 		</p>
-	</div>
-	<!-- Put this div tag to the place, where the Comments block will be -->
-	<div id="vk_comments" style="padding-top:20px"></div>
-	<script type="text/javascript">
-		VK.Widgets.Comments("vk_comments", {limit: 10, width: "520", attach: "*"});
-	</script>
-</section>
-<content-footer></content-footer>
+    </div>
+    <div class="col-lg-12 text-center">
+        <!-- Put this div tag to the place, where the Comments block will be -->
+        <div id="vk_comments" style="padding-top:20px"></div>
+        <script type="text/javascript">
+            VK.Widgets.Comments("vk_comments", {limit: 10, width: "520", attach: "*"});
+        </script>
+    </div>
+    <div class="col-lg-12 text-center">
+        <content-footer></content-footer>
+
+    </div>
+</div>
+
