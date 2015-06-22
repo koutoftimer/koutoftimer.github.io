@@ -1,8 +1,3 @@
-body {
-    padding-top: 70px;
-    padding-bottom: 30px;
-}
-
 div.miner-site {
     width: 78px;
 }
@@ -22,6 +17,12 @@ div.miner-site div.miner.active {
     background: url("../img/miner.gif");
 }
 
-div#office div.center {
+div#office .office-center {
+    text-align: center;
     padding: 20px;
+    height: 60px;
+}
+
+div#office .office-center:hover {
+    font-size: 120%;
 }
