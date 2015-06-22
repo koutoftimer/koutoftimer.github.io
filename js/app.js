@@ -8,10 +8,12 @@
             'app.underground-mining',
             'app.office',
             'app.resources',
-            'ui.router'
+            'ui.router',
+            'LocalStorageModule'
         ])
         .run(bindState)
-        .config(configureRouter);
+        .config(configureRouter)
+        .config(configureLocalStorage);
 
     bindState.$inject = ['$rootScope', '$state', '$stateParams'];
 
@@ -31,13 +33,23 @@
             .otherwise('/');
     }
 
+    configureLocalStorage.$inject = ['localStorageServiceProvider'];
+
+    function configureLocalStorage(localStorageServiceProvider) {
+        localStorageServiceProvider
+            .setPrefix('idle-miner')
+            .setStorageType('sessionStorage')
+    }
+
 })();
 
 (function() {
     'use strict';
 
     angular
-        .module('app.core', []);
+        .module('app.core', [
+            'LocalStorageModule'
+        ]);
 
 })();
 
@@ -207,7 +219,9 @@
     activateResourcesNames();
 
 
-    function ResourcesService() {
+    ResourcesService.$inject = ['$rootScope', 'localStorageService'];
+
+    function ResourcesService($rootScope, localStorageService) {
         var service = new ResourcesList();
 
         activate();
@@ -215,7 +229,22 @@
         return service;
 
         function activate() {
+            var keys = localStorageService.keys();
+
             service.cash = 0;
+
+            if (keys.indexOf('money') != -1) {
+                service.cash = localStorageService.get('money')
+            }
+
+            $rootScope.$watch(
+                function() {
+                    return service.cash;
+                },
+                function(newValue, oldValue) {
+                    localStorageService.set('money', newValue);
+                }
+            )
         }
     }
 
