@@ -28,7 +28,7 @@
             requireBase: false
         });
         $urlRouterProvider
-            .otherwise('/miner/');
+            .otherwise('/');
     }
 
 })();
@@ -305,7 +305,7 @@
             name: 'home',
             templateUrl: '/js/app/home/home.template.html',
             title: 'Mine',
-            url: '/miner/'
+            url: '/'
         };
 
         $stateProvider
@@ -330,19 +330,19 @@
                 name: 'sell-center',
                 templateUrl: 'js/app/office/sell/sell.template.html',
                 title: 'Sell center',
-                url: '/miner/sell'
+                url: '/sell'
             },
             officeEmployee = {
                 name: 'employee-center',
                 templateUrl: 'js/app/office/employee/employee.template.html',
                 title: 'Employee center',
-                url: '/miner/employee'
+                url: '/employee'
             },
             officeUpgrade = {
                 name: 'upgrade-center',
                 templateUrl: 'js/app/office/upgrade/upgrade.template.html',
                 title: 'Upgrade center',
-                url: '/miner/upgrade'
+                url: '/upgrade'
             };
 
         $stateProvider
