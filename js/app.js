@@ -38,7 +38,6 @@
     function configureLocalStorage(localStorageServiceProvider) {
         localStorageServiceProvider
             .setPrefix('idle-miner')
-            .setStorageType('sessionStorage')
     }
 
 })();
@@ -64,9 +63,9 @@
         getConfig: getConfig
     };
 
-    LevelsService.$inject = ['$http', '$interval', 'resources'];
+    LevelsService.$inject = ['$http', '$interval', 'localStorageService', 'resources'];
 
-    function LevelsService($http, $interval, resources) {
+    function LevelsService($http, $interval, localStorageService, resources) {
         var service = {
                 addLevel: addLevel,
                 getNewLevelCost: getNewLevelCost,
