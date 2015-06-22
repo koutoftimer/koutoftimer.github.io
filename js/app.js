@@ -63,9 +63,9 @@
         getConfig: getConfig
     };
 
-    LevelsService.$inject = ['$http', '$interval', 'localStorageService', 'resources'];
+    LevelsService.$inject = ['$http', '$interval', '$rootScope', 'localStorageService', 'resources'];
 
-    function LevelsService($http, $interval, localStorageService, resources) {
+    function LevelsService($http, $interval, $rootScope, localStorageService, resources) {
         var service = {
                 addLevel: addLevel,
                 getNewLevelCost: getNewLevelCost,
@@ -77,7 +77,8 @@
         return service;
 
         function activate() {
-            service.addLevel();
+            initLevels();
+            watchLevels();
             initLevelConfig();
             $interval(dig, 1000);
 
@@ -87,6 +88,22 @@
                         resources.add(worker.dig());
                     });
                 });
+            }
+
+            function initLevels() {
+                var keys = localStorageService.keys();
+
+                if (keys.indexOf('levels') == -1) {
+                    service.addLevel();
+                } else {
+                    var levels = localStorageService.get('levels');
+                    Object.keys(levels).forEach(function (depth) {
+                        service.addLevel();
+                        for (var i = 0; i < levels[depth].workers; ++i) {
+                            service.levels[depth - 1].addWorker();
+                        }
+                    })
+                }
             }
 
             function initLevelConfig() {
@@ -105,6 +122,24 @@
                         // handle error
                         console.log('WARNING: can not load levels config');
                     });
+            }
+
+            function watchLevels() {
+                $rootScope.$watch(
+                    function () {
+                        var result = {};
+                        service.levels.forEach(function (level) {
+                            result[level.depth] = {
+                                workers: level.workers.length
+                            }
+                        });
+                        return JSON.stringify(result);
+                    },
+                    function (newValue, oldValue) {
+                        var levels = JSON.parse(newValue);
+                        localStorageService.set('levels', levels);
+                    }
+                )
             }
         }
 
