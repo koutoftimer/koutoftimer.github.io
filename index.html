@@ -1,17 +1,57 @@
 <!DOCTYPE html>
-<html ng-app='TFTM'>
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>{{ doc_title }}</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/main.css">
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular-route.js"></script>
-    <script src="js/app.js"></script>
+    <title>TFTM home</title>
+    <style>
+        html {
+            background-color: #300A24;
+            color: white;
+            font-size: 1.3em;
+        }
+        .container {
+            margin: auto;
+            padding: 10px;
+        }
+        .user {
+            color: #8AE234;
+            font-weight: bold;
+        }
+        .path {
+            color: #5B9BCF;
+            font-weight: bold;
+        }
+        a, a:active, a:visited {
+            color: white
+        }
+        a:hover {
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-	<div ng-view></div>
+<div class="container">
+<pre>
+                            Welcome!
+
+            You can check my public works and resume.
+
+<span class="user">anonymous</span>:<span class="path">~</span>$ show projects
+    * <a href="https://koutoftimer.github.io/pixi-puzzle-15">https://koutoftimer.github.io/pixi-puzzle-15</a>
+    Classic puzzle 15. Self educational project written to taste <a href="http://www.pixijs.com/">PIXI.js</a>
+
+    * <a href="https://koutoftimer.github.io/idle-miner/#/">https://koutoftimer.github.io/idle-miner/</a>
+    Idle/clicker game on angularJS. Self educational project written to taste
+    <a href="https://angularjs.org/">AngularJS</a>
+
+<span class="user">anonymous</span>:<span class="path">~</span>$ show resume
+    <a href="https://outoftime.pythonanywhere.com/download/resume.html" target="_blank">html</a> | <a
+        href="https://outoftime.pythonanywhere.com/download/resume.pdf" target="_blank">pdf</a> | <a
+        href="https://outoftime.pythonanywhere.com/download/resume.docx" target="_blank">docx</a>
+
+<span class="user">anonymous</span>:<span class="path">~</span>$ ^D
+    exited
+</pre>
+</div>
 </body>
 </html>
