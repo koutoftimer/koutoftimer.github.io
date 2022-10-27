@@ -31,7 +31,7 @@ Duing employment I've got experience with _Celery, PostgreSQL, RabbitMQ, Redis, 
 2016-2017
 :   **Positon**: Python Developer.
 :   **Company**: [DDI Development](https://ddi-dev.com/).
-:   **Responsibilities**: Backend development using _Python/Django_. Duing employment I've got more in depth knowladge of _django admin_ customization, supporting SPA using _AngularJS_.
+:   **Responsibilities**: Backend development using _Python/Django_. During employment I've got more in depth knowladge of _django admin_ customization, supporting SPA using _AngularJS_.
 
 2017-2022
 :   **Positon**: Freelancer
